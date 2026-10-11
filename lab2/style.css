@@ -1,0 +1,273 @@
+/* Сброс отступов браузера */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #4a4155;
+    background-color: #ffdfe8;
+    background-image: url("images/dots.svg");
+}
+
+h1,h2 {
+    font-family: Georgia, serif;
+    color: #6c5a7e;
+}
+
+h1 {
+    font-size: 2.6rem;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin: 40px 0 16px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+a {
+    color: #e07a98;
+}
+
+mark {
+    background-color: #ffd1dc;
+}
+
+/* Лапка перед каждым h2 */
+h2::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    background-image: url("images/bean.svg");
+    background-size: 28px 28px;
+}
+
+h1 + p {
+    margin-bottom: 24px;
+}
+
+.header {
+    padding: 16px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #6c5a7e;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #f7a8bc;
+}
+
+.logo-paw {
+    width: 34px;
+}
+
+.nav > a {
+    display: inline-block;
+    margin: 8px 4px 0;
+    padding: 6px 16px;
+    border-radius: 20px;
+    color: #6c5a7e;
+    text-decoration: none;
+}
+
+.nav > a:hover {
+    background-color: #ffe4ec;
+}
+
+.nav > a.active {
+    background-color: #f7a8bc;
+    color: white;
+}
+
+.page {
+    width: 80%;
+    margin: 40px auto;
+    padding: 44px;
+    background-color: #fffafb;
+    border-radius: 40px;
+}
+
+.lead {
+    font-size: 1.15rem;
+}
+
+.pink {
+    color: #e07a98;
+    font-weight: bold;
+}
+
+/* Две колонки в одну строку */
+.text,.photo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.text {
+    width: 56%;
+}
+
+.photo {
+    width: 38%;
+    margin: 0 2%;
+    padding: 12px;
+    background-color: white;
+    border: 3px solid #ffe0e9;
+    border-radius: 28px;
+}
+
+.photo img {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.row {
+    margin-top: 40px;
+}
+
+.caption {
+    margin-top: 8px;
+    text-align: center;
+    font-style: italic;
+    color: rgb(125, 112, 140);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    background-color: #f7a8bc;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Карточки по три в ряд */
+.card {
+    display: inline-block;
+    width: 31.5%;
+    margin: 0 0.5% 16px;
+    vertical-align: top;
+    padding: 24px;
+    text-align: center;
+    border-radius: 30px;
+    background-color: #fff0f4;
+}
+
+ol li {
+    padding: 6px 12px;
+}
+
+ul {
+    margin-left: 24px;
+    list-style-image: url("images/bean-small.svg");
+}
+
+.icon {
+    font-size: 2.6em;
+}
+
+.cta {
+    margin-top: 40px;
+    padding: 36px;
+    text-align: center;
+    color: white;
+    background-color: #f7a8bc;
+    border-radius: 36px;
+}
+
+.big {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.cta .btn {
+    background-color: white;
+    color: #e07a98;
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    background-color: white;
+    border: 3px solid #f7a8bc;
+}
+
+th {
+    padding: 14px 18px;
+    background-color: #f7a8bc;
+    color: white;
+}
+
+td {
+    padding: 12px 18px;
+    border-bottom: 2px dotted #ffd1dc;
+}
+
+/* Выравнивание в таблице */
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.avatar {
+    display: inline-block;
+    width: 28%;
+    vertical-align: middle;
+    border: 8px solid #f7a8bc;
+    border-radius: 50%;
+}
+
+.about {
+    display: inline-block;
+    width: 66%;
+    margin-left: 4%;
+    vertical-align: middle;
+}
+
+#teacher-name {
+    margin-top: 0;
+    color: #e07a98;
+}
+
+/* У имени лапку не показываем */
+#teacher-name::before {
+    display: none;
+}
+
+.num {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #e07a98;
+}
+
+a[target="_blank"] {
+    font-weight: bold;
+}
