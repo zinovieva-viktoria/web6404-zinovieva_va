@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Запись на занятие - Математика и лапки</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="images/bean.svg" alt="" class="logo__paw">
+            <span>Математика <span class="logo__accent">и лапки</span></span>
+        </a>
+        <nav class="nav">
+            <a href="index.html" class="nav__link">Главная</a>
+            <a href="services.html" class="nav__link">Занятия и цены</a>
+            <a href="about.html" class="nav__link">О преподавателе</a>
+            <a href="contacts.html" class="nav__link">Контакты</a>
+            <a href="signup.html" class="nav__link nav__link--active">Запись</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <h1 class="page__title">Запись на занятие</h1>
+        <p class="page__lead">Оставьте заявку - <mark>свяжусь с вами и подберу удобное время</mark>. Поля со звёздочкой обязательны.</p>
+
+        <form class="form" id="signup-form" action="/api/enroll" method="post" novalidate>
+            <div class="form__field">
+                <label class="form__label" for="name">Имя ученика <span class="form__required">*</span></label>
+                <input class="form__input" type="text" id="name" name="name" placeholder="Например, Маша" minlength="2" maxlength="60" required>
+                <p class="form__error" data-error-for="name"></p>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label" for="phone">Телефон <span class="form__required">*</span></label>
+                <input class="form__input" type="tel" id="phone" name="phone" placeholder="+7 (900) 000-00-00" pattern="[+0-9\(\)\-\s]{10,20}" required>
+                <p class="form__error" data-error-for="phone"></p>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label" for="email">Электронная почта <span class="form__required">*</span></label>
+                <input class="form__input" type="email" id="email" name="email" placeholder="name@example.com" required>
+                <p class="form__error" data-error-for="email"></p>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label" for="grade">Класс <span class="form__required">*</span></label>
+                <select class="form__select" id="grade" name="grade" required>
+                    <option value="">Выберите класс</option>
+                    <option value="5">5 класс</option>
+                    <option value="6">6 класс</option>
+                    <option value="7">7 класс</option>
+                    <option value="8">8 класс</option>
+                    <option value="9">9 класс</option>
+                    <option value="10">10 класс</option>
+                    <option value="11">11 класс</option>
+                </select>
+                <p class="form__error" data-error-for="grade"></p>
+            </div>
+
+            <fieldset class="form__field form__field--full">
+                <legend class="form__label">Цель занятий <span class="form__required">*</span></legend>
+                <div class="form__options">
+                    <div class="form__option">
+                        <input class="form__radio" type="radio" id="goal-school" name="goal" value="Школьная программа" required checked>
+                        <label class="form__option-label" for="goal-school">Школьная программа</label>
+                    </div>
+                    <div class="form__option">
+                        <input class="form__radio" type="radio" id="goal-oge" name="goal" value="Подготовка к ОГЭ">
+                        <label class="form__option-label" for="goal-oge">ОГЭ</label>
+                    </div>
+                    <div class="form__option">
+                        <input class="form__radio" type="radio" id="goal-ege" name="goal" value="Подготовка к ЕГЭ">
+                        <label class="form__option-label" for="goal-ege">ЕГЭ</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form__field">
+                <label class="form__label" for="date">Желаемая дата первого занятия <span class="form__required">*</span></label>
+                <input class="form__input" type="date" id="date" name="date" required>
+                <p class="form__error" data-error-for="date"></p>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label" for="lessons">Занятий в неделю: <span class="form__range-value" id="lessons-value">2</span></label>
+                <input class="form__range" type="range" id="lessons" name="lessons" min="1" max="5" step="1" value="2">
+                <p class="form__error"></p>
+            </div>
+
+            <div class="form__field form__field--full">
+                <label class="form__label" for="comment">Комментарий</label>
+                <textarea class="form__textarea" id="comment" name="comment" maxlength="500" placeholder="Расскажите, что даётся тяжело, и какой результат хотите получить"></textarea>
+            </div>
+
+            <div class="form__field form__field--full">
+                <label class="form__check" for="consent">
+                    <input class="form__checkbox" type="checkbox" id="consent" name="consent" required>
+                    <span>Я согласен(на) на обработку персональных данных <span class="form__required">*</span></span>
+                </label>
+                <p class="form__error" data-error-for="consent"></p>
+            </div>
+
+            <p class="form__status" id="form-status" role="status" hidden></p>
+
+            <div class="form__field form__field--full">
+                <button class="btn btn--wide" type="submit">Отправить заявку</button>
+            </div>
+        </form>
+    </main>
+    <script src="js/Enrollment.js"></script>
+    <script src="js/signup.js"></script>
+</body>
+</html>
